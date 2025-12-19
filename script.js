@@ -1,6 +1,10 @@
 // target body and all divs so they share the same mode class
 const darkModeTargets = document.querySelectorAll('body, body div');
 
+/**
+ * Adds the "dark" class to the element
+ * Removes the "light" class from the element.
+ */
 function setDarkMode() {
   darkModeTargets.forEach(el => {
     el.classList.add('dark');
@@ -8,6 +12,11 @@ function setDarkMode() {
   });
 }
 
+
+/**
+ * Adds the "light" class to the element
+ * Removes the "dark" class from the element.
+ */
 function setLightMode() {
   darkModeTargets.forEach(el => {
     el.classList.add('light');
@@ -15,17 +24,32 @@ function setLightMode() {
   });
 }
 
-const submitButton = document.getElementById('submit-btn');
-const form = document.querySelector('.input'); // the form
+/**
+ * Display a message containing the UserName and save to variable userName.
+ */
+function showMessage(event) {
+  event.preventDefault(); // stop page refresh
 
-form.addEventListener('submit', event => {
-  event.preventDefault();            // stop the page refresh
-  submitButton.style.backgroundColor = 'green';
-  userValue = document.getElementById("login").value;
-  console.log(userValue);
-  showMessage();
-});
+  const input = document.getElementById('login');
+  const submitButton = document.getElementById('submit-btn');
+  const userName = input.value;
 
-function showMessage() {
-    alert(`You submitted "${userValue}!"`)
+  alert(`Submitted: ${userName}`);
+  console.log(userName);
+  submitButton.style.backgroundColor = 'green'; // keeps the color change
+}
+
+/**
+ * Function to expose 
+ */
+
+function showMore(){
+    const showAnswer = document.getElementById("showMore")
+    console.log("JavaScript is a scripting or programming language that allows you to implement complex features on web pages");
+    showAnswer.innerText="JavaScript is a scripting or programming language that allows you to implement complex features on web pages";
+    showAnswer.style.color = "blue";
+    showAnswer.style.fontStyle = "italic";
+    showAnswer.style.border = "solid, 2px";
+    showAnswer.style.padding = "5px";
+
 }
