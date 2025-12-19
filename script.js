@@ -86,3 +86,14 @@ console.log(amountEntered);
     blueBox.style.top = "100px";
 
   }
+
+
+  /**
+   * Function to wipe all html
+   */
+  const closeButton = document.getElementById("juhu");
+
+  closeButton.addEventListener("click", function() {
+    document.body.innerHTML = '';  // wipes everything
+    document.body.innerHTML = '<h1>Job well done!!</h1>';
+  });
