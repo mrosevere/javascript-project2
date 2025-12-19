@@ -73,3 +73,16 @@ console.log(amountEntered);
   const euros = amountEntered * 1.15;
   document.getElementById('result').textContent = `€${euros.toFixed(2)}`;
   });
+
+
+  /**
+   * Function to move Box
+   */
+  function move() {
+    const blueBox = document.getElementById("blue-box");
+    const redBox = document.getElementById("red-box");
+
+    blueBox.style.left = "400px";
+    blueBox.style.top = "100px";
+
+  }
