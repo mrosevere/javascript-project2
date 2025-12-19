@@ -1,6 +1,7 @@
 // target body and all divs so they share the same mode class
 const darkModeTargets = document.querySelectorAll('body, body div');
 
+
 /**
  * Adds the "dark" class to the element
  * Removes the "light" class from the element.
@@ -24,6 +25,7 @@ function setLightMode() {
   });
 }
 
+
 /**
  * Display a message containing the UserName and save to variable userName.
  */
@@ -39,10 +41,10 @@ function showMessage(event) {
   submitButton.style.backgroundColor = 'green'; // keeps the color change
 }
 
-/**
- * Function to expose 
- */
 
+/**
+ * Function to expose the answer text in a box.
+ */
 function showMore(){
     const showAnswer = document.getElementById("showMore")
     console.log("JavaScript is a scripting or programming language that allows you to implement complex features on web pages");
@@ -53,3 +55,21 @@ function showMore(){
     showAnswer.style.padding = "5px";
 
 }
+
+/**
+ * function to convert £ to EUR
+ */
+// Get the form by ID
+const conversionForm = document.getElementById('conversion-form');
+
+conversionForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // stop page refresh
+
+// Get the amount entered
+const amountEntered = document.getElementById("pounds-amount").value;
+console.log(amountEntered);
+
+// Calculate the EUR value
+  const euros = amountEntered * 1.15;
+  document.getElementById('result').textContent = `€${euros.toFixed(2)}`;
+  });
